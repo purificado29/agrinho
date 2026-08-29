@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo | Agricultura Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header class="navbar">
+        <div class="logo">Agro<span>Futuro</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#praticas">Práticas</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Cultivando o Amanhã com Tecnologia e Respeito à Terra</h1>
+            <p>Descubra práticas sustentáveis para otimizar sua produção e proteger a biodiversidade.</p>
+            <a href="#calculadora" class="btn-primary">Calcular Impacto</a>
+        </div>
+    </section>
+
+    <section id="praticas" class="cards-container">
+        <h2>Práticas Sustentáveis</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Rotação de Culturas</h3>
+                <p>Melhora a saúde do solo, reduz pragas e otimiza os nutrientes sem o uso excessivo de químicos.</p>
+            </div>
+            <div class="card">
+                <h3>Manejo de Água</h3>
+                <p>Sistemas de irrigação por gotejamento que reduzem o desperdício de água em até 50%.</p>
+            </div>
+            <div class="card">
+                <h3>Energia Renovável</h3>
+                <p>Uso de painéis solares para alimentar sistemas agrícolas e reduzir a pegada de carbono.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="interactive-section">
+        <div class="calc-box">
+            <h2>Simulador de Economia de Água</h2>
+            <p>Selecione o tamanho da sua área agrícola (em hectares):</p>
+            <input type="number" id="area" placeholder="Ex: 10" min="1">
+            <button onclick="calcularEconomia()" class="btn-secondary">Calcular Economia</button>
+            <div id="resultado" class="resultado"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AgroFuturo. Promovendo a sustentabilidade no campo.</p>
+    </footer>
+
+    <script>
+        function calcularEconomia() {
+            const area = document.getElementById('area').value;
+            const resultado = document.getElementById('resultado');
+
+            if (area > 0) {
+                const litrosEconomizados = area * 15000;
+                resultado.innerHTML = `Com técnicas de irrigação eficiente, você pode economizar aproximadamente <strong>${litrosEconomizados.toLocaleString('pt-BR')} litros</strong> de água por ano!`;
+                resultado.style.display = 'block';
+            } else {
+                resultado.innerHTML = 'Por favor, insira um tamanho de área válido.';
+                resultado.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
